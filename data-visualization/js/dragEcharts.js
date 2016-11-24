@@ -16,10 +16,10 @@ function startDrag(a) {
   var down_xAis, down_yAis;
   a.mousedown(function(c) {
     var type = $(this).attr('type')
-      , txt = $(this).html();
+      , txt  = $(this).html();
 
     params.left = $(this).offset().left;
-    params.top = $(this).offset().top;
+    params.top  = $(this).offset().top;
 
     var html = $('<div id="drag" style="left:' + params.left + 'px;top:' + params.top + 'px;">' + txt + '</div>');
     $('body').append(html);
@@ -57,7 +57,7 @@ function startDrag(a) {
         if (g != 0 || f != 0) {
           $('#drag').css({
             left: params.left + g + "px",
-            top: params.top + f + "px"
+            top : params.top  + f + "px"
           });
           var $obj = $('.ibox')
             , flag = false;
@@ -65,9 +65,9 @@ function startDrag(a) {
             if ($obj.eq(i).find('.ibox').length > 0) {
               continue;
             }
-            var zoom = $('#echartController').css('zoom')
-              , left = $obj.eq(i).offset().left * zoom
-              , top = $obj.eq(i).offset().top * zoom
+            var zoom  = $('#echartController').css('zoom')
+              , left  = $obj.eq(i).offset().left * zoom
+              , top   = $obj.eq(i).offset().top * zoom
               , zoomW = $obj.eq(i).width() * zoom
               , zoomH = $obj.eq(i).height() * zoom;
 
@@ -106,14 +106,16 @@ function startDrag(a) {
 }
 
 function _extend(option) {
-  var title = option.title || {}
-    , legend = option.legend || {}
+  var title   = option.title   || {}
+    , legend  = option.legend  || {}
     , tooltip = option.tooltip || {}
+
   $.extend(title, _COMMON_.title);
   $.extend(legend, _COMMON_.legend);
   $.extend(tooltip, _COMMON_.tooltip);
-  option.title = title;
-  option.legend = legend;
+  
+  option.title   = title;
+  option.legend  = legend;
   option.tooltip = tooltip;
 }
 
