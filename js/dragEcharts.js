@@ -86,7 +86,7 @@ function startDrag(a) {
     document.onmouseup = function(h) {
       $('#drag').remove();
       var i = h ? h : window.event
-        , g = i.clientX - down_xAis,
+        , g = i.clientX - down_xAis
         , f = i.clientY - down_yAis;
       if ((g != 0 || f != 0) && params.flag) {
         if (objID) {
